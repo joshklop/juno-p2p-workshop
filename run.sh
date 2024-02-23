@@ -22,9 +22,6 @@ bold 'Generating key pair and ID for feeder node'
 docker run --rm -it nethermind/juno:v0.10.0 genp2pkeypair > /tmp/juno_file
 gen_env_vars FEEDER < /tmp/juno_file
 
-echo $FEEDER_P2P_PRIVATE_KEY
-echo $FEEDER_P2P_PEERID
-
 bold 'Starting feeder node (syncing from centralized Sepolia sequencer)'
 docker run -d --name juno_feeder \
     --network juno \
