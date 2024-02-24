@@ -62,7 +62,7 @@ docker run -d --name juno_peer1 \
     --p2p-peers=/dns4/juno_feeder/tcp/7777/p2p/$FEEDER_P2P_PEERID \
     --p2p-private-key=$PEER1_P2P_PRIVATE_KEY
 
-bold 'Starting second peer using auto-generated key and ID (syncing from peer 1)'
+bold 'Starting second peer using auto-generated key and ID (syncing from feeder node and the first peer)'
 docker run -d --name juno_peer2 \
     --network juno \
     -p 6062:6062 \
@@ -77,4 +77,4 @@ docker run -d --name juno_peer2 \
     --http-port "6062" \
     --p2p \
     --p2p-addr=/ip4/0.0.0.0/tcp/7779 \
-    --p2p-peers=/dns4/juno_peer1/tcp/7778/p2p/$PEER1_P2P_PEERID
+    --p2p-peers="/dns4/juno_feeder/tcp/7777/p2p/$FEEDER_P2P_PEERID,/dns4/juno_peer1/tcp/7778/p2p/$PEER1_P2P_PEERID"
