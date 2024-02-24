@@ -1,10 +1,5 @@
 #!/usr/bin/env sh
 
-docker rm -f juno_feeder
-docker rm -f juno_peer1
-docker rm -f juno_peer2
+docker rm -vf juno_feeder juno_peer1 juno_peer2
 docker network rm juno
-
-sudo rm -rf ./juno_sepolia_feeder
-sudo rm -rf ./juno_sepolia_peer1
-sudo rm -rf ./juno_sepolia_peer2
+sudo rm -rf ./juno_sepolia_feeder ./juno_sepolia_peer1 ./juno_sepolia_peer2
