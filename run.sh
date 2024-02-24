@@ -77,4 +77,4 @@ docker run -d --name juno_peer2 \
     --http-port "6062" \
     --p2p \
     --p2p-addr=/ip4/0.0.0.0/tcp/7779 \
-    --p2p-peers=/dns4/juno_peer1/tcp/7779/p2p/$PEER1_P2P_PEERID
+    --p2p-peers=/dns4/juno_peer1/tcp/7778/p2p/$PEER1_P2P_PEERID
